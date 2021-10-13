@@ -1,11 +1,9 @@
 import React from 'react'
 import TodoApp from './TodoApp'
-import TicTacToe from './TicTacToe'
 import TopHeader from './TopHeader'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { useColorMode } from '@chakra-ui/color-mode'
 import todoApp from '../assets/todo-app.png'
-import tictactoeApp from '../assets/tictactoe-app.png';
 import {
     Box,
     Heading,
@@ -102,31 +100,6 @@ export default function Dashboard() {
                         align={'center'}
                         position={'relative'}
                         w={'full'}>
-                        <Link to="/tictactoe-app">
-                            <Box
-                                border={'1px'}
-                                borderColor={'cyan.400'}
-                                position={'relative'}
-                                height={'300px'}
-                                rounded={'2xl'}
-                                boxShadow={'2xl'}
-                                width={'full'}
-                                overflow={'hidden'}
-                                _hover={{
-                                    border: '2px',
-                                    borderColor: 'purple.500',
-                                    boxShadow: '0px 5px 20px 0px  rgb(128 0 128 / 43%)'
-                                }}>
-                                <Image
-                                    alt={'Tictactoe App'}
-                                    fit={'cover'}
-                                    align={'center'}
-                                    w={'100%'}
-                                    h={'100%'}
-                                    src={tictactoeApp}
-                                />
-                            </Box>
-                        </Link>
                     </Flex>
                 </Stack>
             </Container>
@@ -140,7 +113,6 @@ export default function Dashboard() {
             <Switch>
                 <Route path="/" exact component={DashboardHeading} />
                 <Route path="/todo-app" component={TodoApp} />
-                <Route path="/tictactoe-app" component={TicTacToe} />
             </Switch>
         </Router>
     )
