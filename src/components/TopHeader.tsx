@@ -81,9 +81,10 @@ export default function TopHeader() {
           spacing={6}
         >
           <IconButton
+            aria-label={"CloseIcon"}
             ml={8}
             icon={isDark ? <FaSun /> : <FaMoon />}
-            isRound="true"
+            isRound={true}
             onClick={toggleColorMode}
           ></IconButton>
         </Stack>

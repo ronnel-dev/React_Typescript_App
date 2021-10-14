@@ -6,12 +6,16 @@ import { Stack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/react";
 import React from "react";
 
-export default function FormTodo({ addTodo }) {
+interface Props {
+  addTodo(value: string): void;
+}
+
+export default function FormTodo({ addTodo }: Props) {
   const [value, setValue] = React.useState("");
 
   const toast = useToast();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     if (!value) {
       toast({
