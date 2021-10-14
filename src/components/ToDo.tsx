@@ -13,23 +13,24 @@ import {
   AlertDialogContent,
   AlertDialogOverlay,
 } from "@chakra-ui/react";
+import { ITodo } from "../interfaces/interface";
 
 export default function ToDo() {
-  const [todos, setTodos] = React.useState([
+  const [todos, setTodos] = React.useState<ITodo[]>([
     {
       text: "This is a sampe todo",
       isDone: false,
     },
   ]);
 
-  const addTodo = (text) => {
-    const newTodos = [...todos, { text }];
-    setTodos(newTodos);
+  const addTodo = (text: string): void => {
+    const newTodos = { text: text, isDone: false };
+    setTodos([...todos, newTodos]);
   };
 
   const toast = useToast();
 
-  const markTodo = (index) => {
+  const markTodo = (index: number) => {
     const newTodos = [...todos];
 
     if (newTodos[index].isDone === true) {
@@ -56,16 +57,16 @@ export default function ToDo() {
     setTodos(newTodos);
   };
 
-  const removeTodo = (index) => {
+  const removeTodo = (index: number) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
     setTodos(newTodos);
     setIsOpen(false);
   };
 
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState<any>(false);
   const onClose = () => setIsOpen(false);
-  const cancelRef = React.useRef();
+  const cancelRef = React.useRef<any>();
 
   const clearList = () => {
     setTodos([]);
@@ -86,7 +87,7 @@ export default function ToDo() {
           </VStack>
         )}
 
-        {todos.map((todo, index) => (
+        {todos.map((todo: ITodo, index: number) => (
           <TodoList
             key={index}
             index={index}

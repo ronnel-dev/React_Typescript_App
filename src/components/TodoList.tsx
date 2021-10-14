@@ -12,11 +12,19 @@ import {
   AlertDialogOverlay,
 } from "@chakra-ui/react";
 import React from "react";
+import { ITodo } from "../interfaces/interface";
 
-export default function TodoList({ todo, index, markTodo, removeTodo }) {
-  const [isOpen, setIsOpen] = React.useState(false);
+interface Props {
+  todo: ITodo;
+  index: number;
+  markTodo(index: number): void;
+  removeTodo(index: number): void;
+}
+
+export default function TodoList({ todo, index, markTodo, removeTodo }: Props) {
+  const [isOpen, setIsOpen] = React.useState<any>(false);
   const onClose = () => setIsOpen(false);
-  const cancelRef = React.useRef();
+  const cancelRef = React.useRef<any>();
 
   return (
     <Stack direction={["column", "row"]} spacing="5px" p={2}>
