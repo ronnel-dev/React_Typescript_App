@@ -66,7 +66,7 @@ export default function ToDo() {
 
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const onClose = () => setIsOpen(false);
-  const cancelRef = React.useRef<HTMLButtonElement>();
+  const cancelRef = React.useRef(null);
 
   const clearList = () => {
     setTodos([]);
