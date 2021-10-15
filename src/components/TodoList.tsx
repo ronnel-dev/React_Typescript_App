@@ -24,7 +24,7 @@ interface Props {
 export default function TodoList({ todo, index, markTodo, removeTodo }: Props) {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const onClose = () => setIsOpen(false);
-  const cancelRef = React.useRef<HTMLButtonElement>();
+  const cancelRef = React.useRef<HTMLButtonElement>(null);
 
   return (
     <Stack direction={["column", "row"]} spacing="5px" p={2}>
