@@ -12,7 +12,7 @@ import {
   AlertDialogOverlay,
 } from "@chakra-ui/react";
 import React from "react";
-import { ITodo } from "../interfaces/interface";
+import { ITodo } from "../../interfaces/interface";
 
 interface Props {
   todo: ITodo;

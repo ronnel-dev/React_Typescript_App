@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Stack } from "@chakra-ui/layout";
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./components/common/Dashboard"
 
 function App() {
 

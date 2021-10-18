@@ -1,9 +1,9 @@
 import React from "react";
-import TodoApp from "./TodoApp";
+import TodoApp from "../todo/TodoApp";
 import TopHeader from "./TopHeader";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useColorMode } from "@chakra-ui/color-mode";
-import todoApp from "../assets/todo-app.png";
+import todoApp from "../../assets/todo-app.png";
 import {
   Box,
   Heading,

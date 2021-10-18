@@ -13,7 +13,7 @@ import {
   AlertDialogContent,
   AlertDialogOverlay,
 } from "@chakra-ui/react";
-import { ITodo } from "../interfaces/interface";
+import { ITodo } from "../../interfaces/interface";
 
 export default function ToDo() {
   const [todos, setTodos] = React.useState<ITodo[]>([
